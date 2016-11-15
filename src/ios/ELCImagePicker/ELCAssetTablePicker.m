@@ -107,8 +107,11 @@
                                                       animated:NO];
             }
 
-            [self.navigationItem setTitle:self.singleSelection ? @"Foto tomada" : @"Fotos tomadas"];
-        });
+            [self.navigationItem setTitle:self.singleSelection ? @"Selecciona una imágen" : @"Selecciona tus imágenes"];
+            [self.navigationItem.rightBarButtonItem setTitle:@"OK"];
+            UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Regresar" style:UIBarButtonItemStyleDone target:self action:@selector(backAction:)];
+            self.navigationItem.leftBarButtonItem = backBarButton;
+          });
     }
 }
 
